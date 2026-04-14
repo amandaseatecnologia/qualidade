@@ -332,7 +332,28 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
 /* Print */
 @media print{.tabs{display:none;}.tab-content{display:block!important;border:none;padding:10px 0;}.card-body{display:block!important;}.chev{display:none;}}
 </style>
-<style id="gh-spin-style">@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}</style></head>
+<style id="gh-spin-style">@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}</style><style id="claude-agent-animation-styles">
+      @keyframes claude-pulse {
+        0% {
+          box-shadow: 
+            inset 0 0 10px rgba(217, 119, 87, 0.5),
+            inset 0 0 20px rgba(217, 119, 87, 0.3),
+            inset 0 0 30px rgba(217, 119, 87, 0.1);
+        }
+        50% {
+          box-shadow: 
+            inset 0 0 15px rgba(217, 119, 87, 0.7),
+            inset 0 0 25px rgba(217, 119, 87, 0.5),
+            inset 0 0 35px rgba(217, 119, 87, 0.2);
+        }
+        100% {
+          box-shadow: 
+            inset 0 0 10px rgba(217, 119, 87, 0.5),
+            inset 0 0 20px rgba(217, 119, 87, 0.3),
+            inset 0 0 30px rgba(217, 119, 87, 0.1);
+        }
+      }
+    </style></head>
 <body>
 
 <header>
@@ -346,7 +367,7 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <div class="stat warn"><div class="num">49</div><div class="label">Sem estrutura padrão</div></div>
   <div class="stat"><div class="num">83</div><div class="label">Contratos mapeados</div></div>
   <div class="stat"><div class="num">350h</div><div class="label">Estimativa total (175+175)</div></div>
-  <div class="stat"><div class="num" id="globalPct">5%</div><div class="label">Progresso geral</div></div>
+  <div class="stat"><div class="num" id="globalPct">3%</div><div class="label">Progresso geral</div></div>
 </div>
 
 <!-- TABS -->
@@ -458,14 +479,14 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
 
   <div id="ativosCards"><div class="card" data-key="ativo_0">
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
-        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--green-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <span class="card-pct" style="font-size: 0.7rem; font-weight: 700; color: rgb(26, 107, 26);">100%</span>
+        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <span class="card-pct" style="font-size: 0.7rem; font-weight: 700; color: var(--blue);">0%</span>
         </div>
         <div class="card-title"><h3>Senac/MG</h3><span>Referência · 9 OSs</span></div>
         <span class="badge badge-ok">OK</span>
         <span class="chev">›</span>
       </div>
-      <div class="card-body"><ul class="checklist"><li data-key="ativo_0_0" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Estrutura 4 pastas</li><li data-key="ativo_0_1" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Nomenclatura padrão</li><li data-key="ativo_0_2" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>OSs numeradas 001-009</li><li data-key="ativo_0_3" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Docs obrigatórios em cada OS</li><li data-key="ativo_0_4" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Validar como modelo</li></ul></div></div><div class="card" data-key="ativo_1">
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_0_0" onclick="toggleCheck(this)" class=""><span class="chk"></span>Estrutura 4 pastas</li><li data-key="ativo_0_1" onclick="toggleCheck(this)" class=""><span class="chk"></span>Nomenclatura padrão</li><li data-key="ativo_0_2" onclick="toggleCheck(this)" class=""><span class="chk"></span>OSs numeradas 001-009</li><li data-key="ativo_0_3" onclick="toggleCheck(this)" class=""><span class="chk"></span>Docs obrigatórios em cada OS</li><li data-key="ativo_0_4" onclick="toggleCheck(this)" class=""><span class="chk"></span>Validar como modelo</li></ul></div></div><div class="card" data-key="ativo_1">
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
           <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
@@ -1052,19 +1073,19 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <h2>Progresso Visual — Acompanhamento em Tempo Real</h2>
 
   <div class="mini-cards">
-    <div class="mini-card mc-green"><div class="mc-val" id="pk-done">12</div><div class="mc-lbl">Itens concluídos</div></div>
-    <div class="mini-card mc-orange"><div class="mc-val" id="pk-left">218</div><div class="mc-lbl">Itens pendentes</div></div>
-    <div class="mini-card mc-blue"><div class="mc-val" id="pk-pct">5%</div><div class="mc-lbl">Progresso geral</div></div>
+    <div class="mini-card mc-green"><div class="mc-val" id="pk-done">7</div><div class="mc-lbl">Itens concluídos</div></div>
+    <div class="mini-card mc-orange"><div class="mc-val" id="pk-left">223</div><div class="mc-lbl">Itens pendentes</div></div>
+    <div class="mini-card mc-blue"><div class="mc-val" id="pk-pct">3%</div><div class="mc-lbl">Progresso geral</div></div>
     <div class="mini-card mc-green"><div class="mc-val" id="pk-phases">2/16</div><div class="mc-lbl">Fases concluídas</div></div>
-    <div class="mini-card"><div class="mc-val" id="pk-hours">18h</div><div class="mc-lbl">Horas estimadas feitas</div></div>
-    <div class="mini-card mc-red"><div class="mc-val" id="pk-remain">332h</div><div class="mc-lbl">Horas restantes</div></div>
+    <div class="mini-card"><div class="mc-val" id="pk-hours">11h</div><div class="mc-lbl">Horas estimadas feitas</div></div>
+    <div class="mini-card mc-red"><div class="mc-val" id="pk-remain">339h</div><div class="mc-lbl">Horas restantes</div></div>
   </div>
 
   <div style="display:flex;justify-content:center;margin-bottom:20px;">
     <div class="donut-wrap">
       <canvas id="pDonut" width="250" height="250" style="width: 200px; height: 200px;"></canvas>
       <div class="donut-center">
-        <div class="big" id="pDonutPct">5%</div>
+        <div class="big" id="pDonutPct">3%</div>
         <div class="sub">concluído</div>
       </div>
       <div class="donut-legend">
@@ -1215,8 +1236,8 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <!-- Summary Row -->
   <div class="bd-summary-row">
     <div class="bd-summary-item"><div class="val">350h</div><div class="lbl">Total planejado</div></div>
-    <div class="bd-summary-item"><div class="val" style="color:var(--green)" id="bdSumDone">18h</div><div class="lbl">Concluído</div></div>
-    <div class="bd-summary-item"><div class="val" style="color:var(--orange)" id="bdSumRemain">332h</div><div class="lbl">Restante</div></div>
+    <div class="bd-summary-item"><div class="val" style="color:var(--green)" id="bdSumDone">11h</div><div class="lbl">Concluído</div></div>
+    <div class="bd-summary-item"><div class="val" style="color:var(--orange)" id="bdSumRemain">339h</div><div class="lbl">Restante</div></div>
     <div class="bd-summary-item"><div class="val">35</div><div class="lbl">Semanas (13/Abr → 15/Dez)</div></div>
     <div class="bd-summary-item"><div class="val" style="color:var(--blue)" id="bdSumWeek">1 / 35</div><div class="lbl">Semana atual</div></div>
   </div>
@@ -1233,8 +1254,8 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
         </div>
       </div>
       <div class="bd-donut-legend">
-        <span class="done" id="bdLegDone">Feito (18h)</span>
-        <span class="left" id="bdLegLeft">Restante (332h)</span>
+        <span class="done" id="bdLegDone">Feito (11h)</span>
+        <span class="left" id="bdLegLeft">Restante (339h)</span>
       </div>
     </div>
 
@@ -1247,7 +1268,7 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
         <div class="bd-kpi"><div class="val">83</div><div class="lbl">Contratos mapeados</div></div>
         <div class="bd-kpi green"><div class="val">6</div><div class="lbl">Clientes ativos</div></div>
         <div class="bd-kpi"><div class="val">50</div><div class="lbl">Clientes inativos</div></div>
-        <div class="bd-kpi red"><div class="val" id="bdKpiSemPadrao">37</div><div class="lbl">Sem padrão</div></div>
+        <div class="bd-kpi red"><div class="val" id="bdKpiSemPadrao">42</div><div class="lbl">Sem padrão</div></div>
         <div class="bd-kpi orange"><div class="val">7</div><div class="lbl">Duplicatas/mistos</div></div>
       </div>
     </div>
@@ -1258,8 +1279,8 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
         <div class="bd-bar-row">
           <div class="bd-bar-label" style="width:60px;font-weight:600;color:var(--orange)">Ativos</div>
           <div class="bd-bar-track">
-            <div class="bd-bar-fill done" id="bdBarAtivosDone" data-bd-width="12" style="min-width: 40px; width: 12%;">21h</div>
-            <div class="bd-bar-fill remain" id="bdBarAtivosLeft" data-bd-width="88" style="width: 88%;">154h</div>
+            <div class="bd-bar-fill done" id="bdBarAtivosDone" data-bd-width="1" style="min-width: 40px; width: 1%;">0h</div>
+            <div class="bd-bar-fill remain" id="bdBarAtivosLeft" data-bd-width="100" style="width: 100%;">175h</div>
           </div>
           <div class="bd-bar-hours">175h</div>
         </div>
@@ -3265,4 +3286,4 @@ if (!document.getElementById('gh-spin-style')) {
 
 
 
-</body></html>
+<div id="claude-agent-glow-border" style="position: fixed; inset: 0px; pointer-events: none; z-index: 2147483646; opacity: 1; transition: opacity 0.3s ease-in-out; animation: 2s ease-in-out 0s infinite normal none running claude-pulse; box-shadow: rgba(217, 119, 87, 0.5) 0px 0px 10px inset, rgba(217, 119, 87, 0.3) 0px 0px 20px inset, rgba(217, 119, 87, 0.1) 0px 0px 30px inset;"></div></body></html>
