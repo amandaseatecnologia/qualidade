@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Painel de Organização dos Drives — SEA Tecnologia 2026</title>
@@ -333,7 +332,7 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
 /* Print */
 @media print{.tabs{display:none;}.tab-content{display:block!important;border:none;padding:10px 0;}.card-body{display:block!important;}.chev{display:none;}}
 </style>
-</head>
+<style id="gh-spin-style">@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}</style></head>
 <body>
 
 <header>
@@ -347,27 +346,27 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <div class="stat warn"><div class="num">49</div><div class="label">Sem estrutura padrão</div></div>
   <div class="stat"><div class="num">83</div><div class="label">Contratos mapeados</div></div>
   <div class="stat"><div class="num">350h</div><div class="label">Estimativa total (175+175)</div></div>
-  <div class="stat"><div class="num" id="globalPct">0%</div><div class="label">Progresso geral</div></div>
+  <div class="stat"><div class="num" id="globalPct">5%</div><div class="label">Progresso geral</div></div>
 </div>
 
 <!-- TABS -->
 <div class="tabs">
-  <button class="tab active" onclick="switchTab('irregularidades')">Irregularidades</button>
+  <button class="tab" onclick="switchTab('irregularidades')">Irregularidades</button>
   <button class="tab" onclick="switchTab('padroes')">Padrões</button>
   <button class="tab" onclick="switchTab('ativos')">Ativos (6)</button>
   <button class="tab" onclick="switchTab('inativos')">Inativos (50)</button>
   <button class="tab" onclick="switchTab('cronograma')">Cronograma</button>
-  <button class="tab" onclick="switchTab('progresso')">Progresso</button>
+  <button class="tab active" onclick="switchTab('progresso')">Progresso</button>
   <button class="tab" onclick="switchTab('board')">Board de Progresso</button>
 </div>
 
 <!-- ==================== IRREGULARIDADES ==================== -->
-<div class="tab-content active" id="irregularidades">
+<div class="tab-content" id="irregularidades">
   <h2>Irregularidades Identificadas</h2>
 
   <h3 style="margin:12px 0 8px;color:var(--orange);">Clientes Ativos — 10 contratos</h3>
   <table class="irreg-table">
-    <tr><th>Cliente</th><th>Contrato</th><th>Irregularidades</th><th>Gravidade</th></tr>
+    <tbody><tr><th>Cliente</th><th>Contrato</th><th>Irregularidades</th><th>Gravidade</th></tr>
     <tr><td>CLDF</td><td>PE 16-2020 / CT 11-2020</td><td>Faltam pastas 003, 004. Maioria das OSs com poucos docs. Nomenclatura inconsistente.</td><td><span class="badge badge-warn">Média</span></td></tr>
     <tr><td>CLDF</td><td>PE 45-2021 / CT 57-2021</td><td>Falta Relatório de Entrega em todas as OSs. OSs em andamento (2026) incompletas.</td><td><span class="badge badge-warn">Média</span></td></tr>
     <tr><td>Sesc/DF</td><td>CT 67-2022</td><td>Faturamento por TA (não por OS). Nomes variantes. Arquivos soltos.</td><td><span class="badge badge-warn">Média</span></td></tr>
@@ -378,11 +377,11 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
     <tr><td>SEEC-GDF</td><td>Contrato único</td><td>Nomes variantes (03=Documentos diversos, 04=Documentos por OS). Organização mista.</td><td><span class="badge badge-warn">Média</span></td></tr>
     <tr><td>HCB</td><td>Contrato único</td><td>Falta pasta 004. Numeração com ponto (1.,2.,3.). Docs faltantes.</td><td><span class="badge badge-warn">Média</span></td></tr>
     <tr><td style="color:var(--green);">Senac/MG</td><td>Referência</td><td>Nenhum — é o modelo padrão.</td><td><span class="badge badge-ok">OK</span></td></tr>
-  </table>
+  </tbody></table>
 
   <h3 style="margin:20px 0 8px;color:var(--blue);">Clientes Inativos — 50 pastas</h3>
   <table class="irreg-table">
-    <tr><th>Tipo</th><th>Qtd</th><th>Detalhes</th><th>Gravidade</th></tr>
+    <tbody><tr><th>Tipo</th><th>Qtd</th><th>Detalhes</th><th>Gravidade</th></tr>
     <tr><td>Sem estrutura padrão (4 pastas)</td><td><strong>49 de 50</strong></td><td>Nenhum inativo segue o padrão 01-Contratos, 02-Faturamento, 03-Doc Projetos, 04-Doc Profissionais.</td><td><span class="badge badge-crit">Crítica</span></td></tr>
     <tr><td>Sem faturamento organizado</td><td><strong>46 de 50</strong></td><td>Apenas SICOOB, EZVIDA-SESI, MPOG e TCE-GO têm alguma pasta de faturamento.</td><td><span class="badge badge-crit">Crítica</span></td></tr>
     <tr><td>Sem Rel. Entrega, TRD, MC, Certidões</td><td><strong>50 de 50</strong></td><td>Nenhum inativo tem esses documentos obrigatórios identificáveis nas pastas.</td><td><span class="badge badge-crit">Crítica</span></td></tr>
@@ -390,7 +389,7 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
     <tr><td>Conteúdo misturado</td><td><strong>3 casos</strong></td><td>RNP contém TJPE; IOS Contratos tem docs de 6 clientes; LogLab tem docs ALMT.</td><td><span class="badge badge-warn">Média</span></td></tr>
     <tr><td>Pastas vazias / sem contrato</td><td><strong>6 clientes</strong></td><td>ABQM, Adam Smith, ARVVO, Capgemini, ALMT, ICDF — sem pasta de contrato formal.</td><td><span class="badge badge-info">Baixa</span></td></tr>
     <tr><td>Nomenclatura não padronizada</td><td><strong>50 de 50</strong></td><td>Nenhum segue o padrão de nomes obrigatório.</td><td><span class="badge badge-crit">Crítica</span></td></tr>
-  </table>
+  </tbody></table>
 </div>
 
 <!-- ==================== PADRÕES ==================== -->
@@ -457,7 +456,97 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <h2>Clientes Ativos — Checklist de Verificação</h2>
   <p style="font-size:.8rem;color:var(--gray);margin-bottom:16px;">Clique nos itens para marcar como concluído. O progresso é salvo automaticamente no navegador.</p>
 
-  <div id="ativosCards"></div>
+  <div id="ativosCards"><div class="card" data-key="ativo_0">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--green-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <span class="card-pct" style="font-size: 0.7rem; font-weight: 700; color: rgb(26, 107, 26);">100%</span>
+        </div>
+        <div class="card-title"><h3>Senac/MG</h3><span>Referência · 9 OSs</span></div>
+        <span class="badge badge-ok">OK</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_0_0" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Estrutura 4 pastas</li><li data-key="ativo_0_1" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Nomenclatura padrão</li><li data-key="ativo_0_2" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>OSs numeradas 001-009</li><li data-key="ativo_0_3" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Docs obrigatórios em cada OS</li><li data-key="ativo_0_4" onclick="toggleCheck(this)" class="done"><span class="chk">✓</span>Validar como modelo</li></ul></div></div><div class="card" data-key="ativo_1">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>CLDF</h3><span>PE 16-2020 / CT 11-2020 · 16 OSs</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_1_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar pastas 003 e 004</li><li data-key="ativo_1_1" onclick="toggleCheck(this)"><span class="chk"></span>Padronizar nomenclatura das 16 OSs</li><li data-key="ativo_1_2" onclick="toggleCheck(this)"><span class="chk"></span>Completar docs em cada OS (MC, Rel. Entrega, TRD, NF, Certidões)</li><li data-key="ativo_1_3" onclick="toggleCheck(this)"><span class="chk"></span>Mover arquivos soltos para pasta correta</li></ul></div></div><div class="card" data-key="ativo_2">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>CLDF</h3><span>PE 45-2021 / CT 57-2021 · 30 OSs</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_2_0" onclick="toggleCheck(this)"><span class="chk"></span>Adicionar Relatório de Entrega em todas as OSs</li><li data-key="ativo_2_1" onclick="toggleCheck(this)"><span class="chk"></span>Completar OSs em andamento (2026)</li><li data-key="ativo_2_2" onclick="toggleCheck(this)"><span class="chk"></span>Verificar nomenclatura padrão</li><li data-key="ativo_2_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios</li></ul></div></div><div class="card" data-key="ativo_3">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Sesc/DF</h3><span>CT 67-2022 · OSs a verificar</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_3_0" onclick="toggleCheck(this)"><span class="chk"></span>Converter faturamento de TA para OS</li><li data-key="ativo_3_1" onclick="toggleCheck(this)"><span class="chk"></span>Padronizar nomes de pastas</li><li data-key="ativo_3_2" onclick="toggleCheck(this)"><span class="chk"></span>Mover arquivos soltos</li><li data-key="ativo_3_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios</li></ul></div></div><div class="card" data-key="ativo_4">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Sesc/DF</h3><span>CT 4269-2023 · OSs a verificar</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_4_0" onclick="toggleCheck(this)"><span class="chk"></span>Converter faturamento de TA para OS</li><li data-key="ativo_4_1" onclick="toggleCheck(this)"><span class="chk"></span>Renomear pasta 004 (nome longo)</li><li data-key="ativo_4_2" onclick="toggleCheck(this)"><span class="chk"></span>Mover arquivos soltos (Report, Status)</li><li data-key="ativo_4_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios</li></ul></div></div><div class="card" data-key="ativo_5">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Sesc/DF</h3><span>CT 31394-2025 · 27 OSs</span></div>
+        <span class="badge badge-crit">Crítico</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_5_0" onclick="toggleCheck(this)"><span class="chk"></span>CRÍTICO: Eliminar duplicatas massivas em todas as OSs</li><li data-key="ativo_5_1" onclick="toggleCheck(this)"><span class="chk"></span>Renomear pasta 003 (nome de projeto errado)</li><li data-key="ativo_5_2" onclick="toggleCheck(this)"><span class="chk"></span>Padronizar nomenclatura</li><li data-key="ativo_5_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios nas 27+ OSs</li></ul></div></div><div class="card" data-key="ativo_6">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TST</h3><span>PE 80-2019 · 13 OSs</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_6_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar pasta 004</li><li data-key="ativo_6_1" onclick="toggleCheck(this)"><span class="chk"></span>Corrigir numeração (1,2,3 → 001,002,003)</li><li data-key="ativo_6_2" onclick="toggleCheck(this)"><span class="chk"></span>Reorganizar estrutura interna</li><li data-key="ativo_6_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios nas 13 OSs</li></ul></div></div><div class="card" data-key="ativo_7">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TST</h3><span>PE 018-2025 · OSs a verificar</span></div>
+        <span class="badge badge-crit">Crítico</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_7_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar 4 pastas padrão</li><li data-key="ativo_7_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover PDF de contrato para 01-Contratos</li><li data-key="ativo_7_2" onclick="toggleCheck(this)"><span class="chk"></span>Organizar estrutura ad-hoc</li><li data-key="ativo_7_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios</li></ul></div></div><div class="card" data-key="ativo_8">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>SEEC-GDF</h3><span>Contrato único · 21 OSs</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_8_0" onclick="toggleCheck(this)"><span class="chk"></span>Renomear pasta 03 → padrão</li><li data-key="ativo_8_1" onclick="toggleCheck(this)"><span class="chk"></span>Renomear pasta 04 → padrão</li><li data-key="ativo_8_2" onclick="toggleCheck(this)"><span class="chk"></span>Padronizar nomenclatura das 21+ OSs</li><li data-key="ativo_8_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios</li></ul></div></div><div class="card" data-key="ativo_9">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>HCB</h3><span>Contrato único · 7 OSs</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="ativo_9_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar pasta 004</li><li data-key="ativo_9_1" onclick="toggleCheck(this)"><span class="chk"></span>Corrigir numeração (1. → 001)</li><li data-key="ativo_9_2" onclick="toggleCheck(this)"><span class="chk"></span>Completar docs faltantes nas 7 OSs</li><li data-key="ativo_9_3" onclick="toggleCheck(this)"><span class="chk"></span>Conferir docs obrigatórios</li></ul></div></div></div>
 </div>
 
 <!-- ==================== INATIVOS ==================== -->
@@ -465,7 +554,421 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <h2>Clientes Inativos — Checklist de Verificação</h2>
   <p style="font-size:.8rem;color:var(--gray);margin-bottom:16px;">Clique nos itens para marcar como concluído. O progresso é salvo automaticamente no navegador.</p>
 
-  <div id="inativosCards"></div>
+  <div id="inativosCards"><div class="card" data-key="inativo_0">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>02 - EB</h3><span>4 contratos · 4 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_0_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_0_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 4 contratos em subpastas</li><li data-key="inativo_0_2" onclick="toggleCheck(this)"><span class="chk"></span>Mover Liferay para 03</li><li data-key="inativo_0_3" onclick="toggleCheck(this)"><span class="chk"></span>Verificar duplicata com EXÉRCITO</li></ul></div></div><div class="card" data-key="inativo_1">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>03 - IN</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_1_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_1_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2013_02.00016.00 para 01</li></ul></div></div><div class="card" data-key="inativo_2">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>04 - IICA</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_2_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_2_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2017_001 para 01</li></ul></div></div><div class="card" data-key="inativo_3">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>06 - ANTT</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_3_0" onclick="toggleCheck(this)"><span class="chk"></span>Renomear 12 pastas numeradas para padrão 01-04</li><li data-key="inativo_3_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover documentação para estrutura correta</li></ul></div></div><div class="card" data-key="inativo_4">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>06 - SICOOB</h3><span>5 contratos · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_4_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_4_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 5 contratos em subpastas</li><li data-key="inativo_4_2" onclick="toggleCheck(this)"><span class="chk"></span>Mover modelos de OS para local adequado</li></ul></div></div><div class="card" data-key="inativo_5">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>06 - TCDF</h3><span>1 contrato · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_5_0" onclick="toggleCheck(this)"><span class="chk"></span>Renomear pastas para padrão 01-04</li><li data-key="inativo_5_1" onclick="toggleCheck(this)"><span class="chk"></span>Verificar consolidação com TCDF</li><li data-key="inativo_5_2" onclick="toggleCheck(this)"><span class="chk"></span>Mover MC e Status Report</li></ul></div></div><div class="card" data-key="inativo_6">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>10 - IGES</h3><span>2 contratos · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_6_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_6_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 2 contratos</li></ul></div></div><div class="card" data-key="inativo_7">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>ANEEL</h3><span>2 contratos · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_7_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_7_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 2 contratos</li></ul></div></div><div class="card" data-key="inativo_8">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>ANVISA</h3><span>2 contratos · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_8_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_8_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 2 contratos</li></ul></div></div><div class="card" data-key="inativo_9">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Aeronáutica</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_9_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_9_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2013_02.00009.00</li></ul></div></div><div class="card" data-key="inativo_10">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>BNB</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_10_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_10_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2014_133</li></ul></div></div><div class="card" data-key="inativo_11">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Câmara Deputados</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_11_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_11_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar PDFs soltos (CT 2011.271)</li></ul></div></div><div class="card" data-key="inativo_12">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>CASSI</h3><span>2 contratos · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_12_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_12_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar CT Power BI e CT Red Hat</li></ul></div></div><div class="card" data-key="inativo_13">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>CDF</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_13_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_13_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2011_271</li></ul></div></div><div class="card" data-key="inativo_14">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Certisign</h3><span>3 contratos · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_14_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_14_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 3 contratos (2010, 2011, 2012)</li></ul></div></div><div class="card" data-key="inativo_15">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>CLDF (inativo)</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_15_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_15_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2011_020</li></ul></div></div><div class="card" data-key="inativo_16">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>CNF</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_16_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_16_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 20130621</li></ul></div></div><div class="card" data-key="inativo_17">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>CPB</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_17_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_17_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2016_284</li></ul></div></div><div class="card" data-key="inativo_18">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>EBSERH</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_18_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_18_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2014_20</li></ul></div></div><div class="card" data-key="inativo_19">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>EMBRAPA</h3><span>12 contratos · 4 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_19_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_19_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 12 contratos/ARPs em subpastas</li><li data-key="inativo_19_2" onclick="toggleCheck(this)"><span class="chk"></span>Mover Liferay e NFe</li><li data-key="inativo_19_3" onclick="toggleCheck(this)"><span class="chk"></span>Consolidar docs</li></ul></div></div><div class="card" data-key="inativo_20">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>ENAP</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_20_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_20_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2013_21</li></ul></div></div><div class="card" data-key="inativo_21">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>EXÉRCITO</h3><span>3 contratos · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_21_0" onclick="toggleCheck(this)"><span class="chk"></span>Verificar duplicata com 02-EB</li><li data-key="inativo_21_1" onclick="toggleCheck(this)"><span class="chk"></span>Consolidar se necessário</li><li data-key="inativo_21_2" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 3 contratos/empenhos</li></ul></div></div><div class="card" data-key="inativo_22">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>EZVIDA-SESI</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_22_0" onclick="toggleCheck(this)"><span class="chk"></span>Renomear pastas 1-6 para padrão 01-04</li><li data-key="inativo_22_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover pasta Ionate e _old</li></ul></div></div><div class="card" data-key="inativo_23">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>IBA</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_23_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_23_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2011_01</li></ul></div></div><div class="card" data-key="inativo_24">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>IFSC</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_24_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_24_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2015_75</li></ul></div></div><div class="card" data-key="inativo_25">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>INEP</h3><span>5 contratos · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_25_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_25_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 5 contratos/ARPs</li><li data-key="inativo_25_2" onclick="toggleCheck(this)"><span class="chk"></span>Mover Faturamento e Apostilamento</li></ul></div></div><div class="card" data-key="inativo_26">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>MCTI</h3><span>2 contratos · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_26_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_26_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 2 contratos</li><li data-key="inativo_26_2" onclick="toggleCheck(this)"><span class="chk"></span>Verificar consolidação com MCTI(1)</li></ul></div></div><div class="card" data-key="inativo_27">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>MI</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_27_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_27_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2014_07</li></ul></div></div><div class="card" data-key="inativo_28">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>MinC</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_28_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_28_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2012_13</li></ul></div></div><div class="card" data-key="inativo_29">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>MME</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_29_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_29_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2013_30</li></ul></div></div><div class="card" data-key="inativo_30">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>MPOG</h3><span>1 contrato · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_30_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_30_1" onclick="toggleCheck(this)"><span class="chk"></span>Identificar nº do contrato</li><li data-key="inativo_30_2" onclick="toggleCheck(this)"><span class="chk"></span>Organizar Faturamento</li></ul></div></div><div class="card" data-key="inativo_31">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Poupex</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_31_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_31_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2017_1008</li></ul></div></div><div class="card" data-key="inativo_32">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>RNP</h3><span>1 contrato · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_32_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_32_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2011_01</li><li data-key="inativo_32_2" onclick="toggleCheck(this)"><span class="chk"></span>Remover pasta TJPE (pertence a outro cliente)</li></ul></div></div><div class="card" data-key="inativo_33">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>STF</h3><span>2 contratos · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_33_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_33_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 2 contratos (2013, 2015)</li></ul></div></div><div class="card" data-key="inativo_34">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TCE-GO</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_34_0" onclick="toggleCheck(this)"><span class="chk"></span>Renomear 8 pastas para padrão 01-04</li><li data-key="inativo_34_1" onclick="toggleCheck(this)"><span class="chk"></span>Manter como referência de organização</li></ul></div></div><div class="card" data-key="inativo_35">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TCDF</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_35_0" onclick="toggleCheck(this)"><span class="chk"></span>Verificar consolidação com 06-TCDF</li><li data-key="inativo_35_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2007_27</li></ul></div></div><div class="card" data-key="inativo_36">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TCU</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_36_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_36_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 2015_002</li></ul></div></div><div class="card" data-key="inativo_37">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TJPE</h3><span>2 contratos · 3 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_37_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_37_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 2 contratos</li><li data-key="inativo_37_2" onclick="toggleCheck(this)"><span class="chk"></span>Verificar consolidação com TJPE(1)</li></ul></div></div><div class="card" data-key="inativo_38">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TJPR</h3><span>5 contratos · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_38_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_38_1" onclick="toggleCheck(this)"><span class="chk"></span>Organizar 5 contratos (2010-2016)</li></ul></div></div><div class="card" data-key="inativo_39">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>TJRJ</h3><span>1 contrato · 2 tarefas</span></div>
+        
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_39_0" onclick="toggleCheck(this)"><span class="chk"></span>Criar estrutura 01-04</li><li data-key="inativo_39_1" onclick="toggleCheck(this)"><span class="chk"></span>Mover contrato nº 003_0269_2013</li></ul></div></div><div class="card" data-key="inativo_40">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>ALMT</h3><span>0 contratos · 2 tarefas</span></div>
+        <span class="badge badge-info">Sem contrato</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_40_0" onclick="toggleCheck(this)"><span class="chk"></span>Avaliar manter/arquivar</li><li data-key="inativo_40_1" onclick="toggleCheck(this)"><span class="chk"></span>Verificar PE 08-2018</li></ul></div></div><div class="card" data-key="inativo_41">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>ABQM</h3><span>0 contratos · 1 tarefas</span></div>
+        <span class="badge badge-info">Sem contrato</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_41_0" onclick="toggleCheck(this)"><span class="chk"></span>Pasta vazia — documentar decisão manter/excluir</li></ul></div></div><div class="card" data-key="inativo_42">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Adam Smith</h3><span>0 contratos · 1 tarefas</span></div>
+        <span class="badge badge-info">Sem contrato</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_42_0" onclick="toggleCheck(this)"><span class="chk"></span>Apenas 1 PDF — documentar decisão</li></ul></div></div><div class="card" data-key="inativo_43">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>ARVVO</h3><span>0 contratos · 1 tarefas</span></div>
+        <span class="badge badge-info">Sem contrato</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_43_0" onclick="toggleCheck(this)"><span class="chk"></span>Apenas 2 arquivos — documentar decisão</li></ul></div></div><div class="card" data-key="inativo_44">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>Capgemini</h3><span>0 contratos · 1 tarefas</span></div>
+        <span class="badge badge-info">Sem contrato</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_44_0" onclick="toggleCheck(this)"><span class="chk"></span>Sem contrato — documentar decisão</li></ul></div></div><div class="card" data-key="inativo_45">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="card-pct" style="font-size:.7rem;font-weight:700;color:var(--blue);">0%</span>
+        </div>
+        <div class="card-title"><h3>ICDF</h3><span>0 contratos · 1 tarefas</span></div>
+        <span class="badge badge-info">Sem contrato</span>
+        <span class="chev">›</span>
+      </div>
+      <div class="card-body"><ul class="checklist"><li data-key="inativo_45_0" onclick="toggleCheck(this)"><span class="chk"></span>Organizar proposta e NF em pasta mínima</li></ul></div></div></div>
 </div>
 
 <!-- ==================== CRONOGRAMA ==================== -->
@@ -545,23 +1048,23 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
 </div>
 
 <!-- ==================== PROGRESSO ==================== -->
-<div class="tab-content" id="progresso">
+<div class="tab-content active" id="progresso">
   <h2>Progresso Visual — Acompanhamento em Tempo Real</h2>
 
   <div class="mini-cards">
-    <div class="mini-card mc-green"><div class="mc-val" id="pk-done">0</div><div class="mc-lbl">Itens concluídos</div></div>
-    <div class="mini-card mc-orange"><div class="mc-val" id="pk-left">0</div><div class="mc-lbl">Itens pendentes</div></div>
-    <div class="mini-card mc-blue"><div class="mc-val" id="pk-pct">0%</div><div class="mc-lbl">Progresso geral</div></div>
+    <div class="mini-card mc-green"><div class="mc-val" id="pk-done">12</div><div class="mc-lbl">Itens concluídos</div></div>
+    <div class="mini-card mc-orange"><div class="mc-val" id="pk-left">218</div><div class="mc-lbl">Itens pendentes</div></div>
+    <div class="mini-card mc-blue"><div class="mc-val" id="pk-pct">5%</div><div class="mc-lbl">Progresso geral</div></div>
     <div class="mini-card mc-green"><div class="mc-val" id="pk-phases">2/16</div><div class="mc-lbl">Fases concluídas</div></div>
-    <div class="mini-card"><div class="mc-val" id="pk-hours">30h</div><div class="mc-lbl">Horas estimadas feitas</div></div>
-    <div class="mini-card mc-red"><div class="mc-val" id="pk-remain">320h</div><div class="mc-lbl">Horas restantes</div></div>
+    <div class="mini-card"><div class="mc-val" id="pk-hours">18h</div><div class="mc-lbl">Horas estimadas feitas</div></div>
+    <div class="mini-card mc-red"><div class="mc-val" id="pk-remain">332h</div><div class="mc-lbl">Horas restantes</div></div>
   </div>
 
   <div style="display:flex;justify-content:center;margin-bottom:20px;">
     <div class="donut-wrap">
-      <canvas id="pDonut" width="200" height="200"></canvas>
+      <canvas id="pDonut" width="250" height="250" style="width: 200px; height: 200px;"></canvas>
       <div class="donut-center">
-        <div class="big" id="pDonutPct">0%</div>
+        <div class="big" id="pDonutPct">5%</div>
         <div class="sub">concluído</div>
       </div>
       <div class="donut-legend">
@@ -573,11 +1076,123 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
 
   <div class="chart-canvas-wrap" style="margin-bottom:16px;">
     <h3>Progresso por Fase — Ativos</h3>
-    <div id="pBarsAtivos"></div>
+    <div id="pBarsAtivos"><div class="bar-row-h">
+      <div class="bar-lbl">F1 Diagnóstico</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:100%;background:#00B050;">15h</div>
+        <div class="bar-seg" style="width:0%;background:#D6E4F0;color:#666;"></div>
+      </div>
+      <div class="bar-hrs">✓</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F2 Senac/MG</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#5B9BD5;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">15h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F3 Sesc/DF</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#ED7D31;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">40h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F4 CLDF</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#FFC000;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">30h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F5 TST/GDF/HCB</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#A9D18E;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">45h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F6 Revisão</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#7030A0;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">20h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F7 Buffer</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#888;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">10h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div></div>
   </div>
   <div class="chart-canvas-wrap">
     <h3>Progresso por Fase — Inativos</h3>
-    <div id="pBarsInativos"></div>
+    <div id="pBarsInativos"><div class="bar-row-h">
+      <div class="bar-lbl">F1 Diagnóstico</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:100%;background:#00B050;">15h</div>
+        <div class="bar-seg" style="width:0%;background:#D6E4F0;color:#666;"></div>
+      </div>
+      <div class="bar-hrs">✓</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F2 Duplicatas</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#2F5496;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">15h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F3 Bem org.</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#5B9BD5;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">15h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F4 3+ CTs</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#ED7D31;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">40h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F5 Lote 1</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#FFC000;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">30h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F6 Lote 2</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#A9D18E;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">25h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F7 Sem CT</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#C00000;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">15h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F8 Revisão</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#7030A0;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">15h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div><div class="bar-row-h">
+      <div class="bar-lbl">F9 Buffer</div>
+      <div class="bar-track">
+        <div class="bar-seg" style="width:0%;background:#888;"></div>
+        <div class="bar-seg" style="width:100%;background:#D6E4F0;color:#666;">5h</div>
+      </div>
+      <div class="bar-hrs">—</div>
+    </div></div>
   </div>
 </div>
 
@@ -586,7 +1201,7 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
 
   <div class="bd-header">
     <div>
-      <h2>&#9679; Board de Progresso — Organização dos Drives</h2>
+      <h2>● Board de Progresso — Organização dos Drives</h2>
     </div>
     <div class="bd-header-meta">
       <span>Amanda Silva · SEA Tecnologia</span>
@@ -600,8 +1215,8 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <!-- Summary Row -->
   <div class="bd-summary-row">
     <div class="bd-summary-item"><div class="val">350h</div><div class="lbl">Total planejado</div></div>
-    <div class="bd-summary-item"><div class="val" style="color:var(--green)" id="bdSumDone">0h</div><div class="lbl">Concluído</div></div>
-    <div class="bd-summary-item"><div class="val" style="color:var(--orange)" id="bdSumRemain">350h</div><div class="lbl">Restante</div></div>
+    <div class="bd-summary-item"><div class="val" style="color:var(--green)" id="bdSumDone">18h</div><div class="lbl">Concluído</div></div>
+    <div class="bd-summary-item"><div class="val" style="color:var(--orange)" id="bdSumRemain">332h</div><div class="lbl">Restante</div></div>
     <div class="bd-summary-item"><div class="val">35</div><div class="lbl">Semanas (13/Abr → 15/Dez)</div></div>
     <div class="bd-summary-item"><div class="val" style="color:var(--blue)" id="bdSumWeek">1 / 35</div><div class="lbl">Semana atual</div></div>
   </div>
@@ -609,22 +1224,22 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <!-- TOP ROW: Donut + KPIs + Bars -->
   <div class="bd-grid-top">
     <div class="bd-panel bd-donut-wrap">
-      <div class="bd-panel-title">&#128200; Progresso Geral</div>
+      <div class="bd-panel-title">📈 Progresso Geral</div>
       <div class="bd-donut-container">
-        <canvas id="bdDonutChart"></canvas>
+        <canvas id="bdDonutChart" width="400" height="400"></canvas>
         <div class="bd-donut-center">
-          <div class="pct" id="bdDonutPct">0%</div>
+          <div class="pct" id="bdDonutPct">3%</div>
           <div class="sub">concluído</div>
         </div>
       </div>
       <div class="bd-donut-legend">
-        <span class="done" id="bdLegDone">Feito (0h)</span>
-        <span class="left" id="bdLegLeft">Restante (350h)</span>
+        <span class="done" id="bdLegDone">Feito (18h)</span>
+        <span class="left" id="bdLegLeft">Restante (332h)</span>
       </div>
     </div>
 
     <div class="bd-panel">
-      <div class="bd-panel-title">&#128202; Indicadores-Chave</div>
+      <div class="bd-panel-title">📊 Indicadores-Chave</div>
       <div class="bd-kpis">
         <div class="bd-kpi blue"><div class="val">56</div><div class="lbl">Clientes totais</div></div>
         <div class="bd-kpi green"><div class="val" id="bdKpiFasesDone">2</div><div class="lbl">Fases concluídas</div></div>
@@ -632,19 +1247,19 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
         <div class="bd-kpi"><div class="val">83</div><div class="lbl">Contratos mapeados</div></div>
         <div class="bd-kpi green"><div class="val">6</div><div class="lbl">Clientes ativos</div></div>
         <div class="bd-kpi"><div class="val">50</div><div class="lbl">Clientes inativos</div></div>
-        <div class="bd-kpi red"><div class="val" id="bdKpiSemPadrao">49</div><div class="lbl">Sem padrão</div></div>
+        <div class="bd-kpi red"><div class="val" id="bdKpiSemPadrao">37</div><div class="lbl">Sem padrão</div></div>
         <div class="bd-kpi orange"><div class="val">7</div><div class="lbl">Duplicatas/mistos</div></div>
       </div>
     </div>
 
     <div class="bd-panel">
-      <div class="bd-panel-title">&#9201; Horas por Trilha</div>
+      <div class="bd-panel-title">⏱ Horas por Trilha</div>
       <div style="margin-bottom:20px;" id="bdHoursTrack">
         <div class="bd-bar-row">
           <div class="bd-bar-label" style="width:60px;font-weight:600;color:var(--orange)">Ativos</div>
           <div class="bd-bar-track">
-            <div class="bd-bar-fill done" id="bdBarAtivosDone" data-bd-width="0" style="min-width:40px">0h</div>
-            <div class="bd-bar-fill remain" id="bdBarAtivosLeft" data-bd-width="100">175h</div>
+            <div class="bd-bar-fill done" id="bdBarAtivosDone" data-bd-width="12" style="min-width: 40px; width: 12%;">21h</div>
+            <div class="bd-bar-fill remain" id="bdBarAtivosLeft" data-bd-width="88" style="width: 88%;">154h</div>
           </div>
           <div class="bd-bar-hours">175h</div>
         </div>
@@ -652,25 +1267,121 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
         <div class="bd-bar-row">
           <div class="bd-bar-label" style="width:60px;font-weight:600;color:var(--blue)">Inativos</div>
           <div class="bd-bar-track">
-            <div class="bd-bar-fill done" id="bdBarInativosDone" data-bd-width="0" style="min-width:40px">0h</div>
-            <div class="bd-bar-fill remain" id="bdBarInativosLeft" data-bd-width="100">175h</div>
+            <div class="bd-bar-fill done" id="bdBarInativosDone" data-bd-width="1" style="min-width: 40px; width: 1%;">0h</div>
+            <div class="bd-bar-fill remain" id="bdBarInativosLeft" data-bd-width="100" style="width: 100%;">175h</div>
           </div>
           <div class="bd-bar-hours">175h</div>
         </div>
       </div>
 
-      <div class="bd-panel-title" style="margin-top:12px">&#128197; Distribuição por Fase — Ativos</div>
-      <div class="bd-bars" id="bdBarsAtivos"></div>
-      <div class="bd-panel-title" style="margin-top:16px">&#128197; Distribuição por Fase — Inativos</div>
-      <div class="bd-bars" id="bdBarsInativos"></div>
+      <div class="bd-panel-title" style="margin-top:12px">📅 Distribuição por Fase — Ativos</div>
+      <div class="bd-bars" id="bdBarsAtivos"><div class="bd-bar-row">
+      <div class="bd-bar-label">Diagnóstico</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="33.33333333333333" style="background: linear-gradient(90deg, rgb(0, 176, 80), rgba(0, 176, 80, 0.533)); width: 33.3333%;">15h</div>
+      </div>
+      <div class="bd-bar-hours">✓</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Senac/MG (ref)</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="33.33333333333333" style="background: linear-gradient(90deg, rgb(91, 155, 213), rgba(91, 155, 213, 0.533)); opacity: 0.5; width: 33.3333%;">15h</div>
+      </div>
+      <div class="bd-bar-hours">3sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Sesc/DF</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="88.88888888888889" style="background: linear-gradient(90deg, rgb(237, 125, 49), rgba(237, 125, 49, 0.533)); opacity: 0.5; width: 88.8889%;">40h</div>
+      </div>
+      <div class="bd-bar-hours">8sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">CLDF</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="66.66666666666666" style="background: linear-gradient(90deg, rgb(255, 192, 0), rgba(255, 192, 0, 0.533)); opacity: 0.5; width: 66.6667%;">30h</div>
+      </div>
+      <div class="bd-bar-hours">6sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">TST, GDF, HCB</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="100" style="background: linear-gradient(90deg, rgb(169, 209, 142), rgba(169, 209, 142, 0.533)); opacity: 0.5; width: 100%;">45h</div>
+      </div>
+      <div class="bd-bar-hours">9sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Revisão geral</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="44.44444444444444" style="background: linear-gradient(90deg, rgb(112, 48, 160), rgba(112, 48, 160, 0.533)); opacity: 0.5; width: 44.4444%;">20h</div>
+      </div>
+      <div class="bd-bar-hours">4sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Buffer</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="22.22222222222222" style="opacity: 0.5; width: 22.2222%;">10h</div>
+      </div>
+      <div class="bd-bar-hours">2sem</div>
+    </div></div>
+      <div class="bd-panel-title" style="margin-top:16px">📅 Distribuição por Fase — Inativos</div>
+      <div class="bd-bars" id="bdBarsInativos"><div class="bd-bar-row">
+      <div class="bd-bar-label">Diagnóstico</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="37.5" style="background: linear-gradient(90deg, rgb(0, 176, 80), rgba(0, 176, 80, 0.533)); width: 37.5%;">15h</div>
+      </div>
+      <div class="bd-bar-hours">✓</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Duplicatas</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="37.5" style="background: linear-gradient(90deg, rgb(47, 84, 150), rgba(47, 84, 150, 0.533)); opacity: 0.5; width: 37.5%;">15h</div>
+      </div>
+      <div class="bd-bar-hours">3sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Bem organizados</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="37.5" style="background: linear-gradient(90deg, rgb(91, 155, 213), rgba(91, 155, 213, 0.533)); opacity: 0.5; width: 37.5%;">15h</div>
+      </div>
+      <div class="bd-bar-hours">3sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">3+ contratos</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="100" style="background: linear-gradient(90deg, rgb(237, 125, 49), rgba(237, 125, 49, 0.533)); opacity: 0.5; width: 100%;">40h</div>
+      </div>
+      <div class="bd-bar-hours">8sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Lote 1 (1-2 CTs)</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="75" style="background: linear-gradient(90deg, rgb(255, 192, 0), rgba(255, 192, 0, 0.533)); opacity: 0.5; width: 75%;">30h</div>
+      </div>
+      <div class="bd-bar-hours">6sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Lote 2 (1-2 CTs)</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="62.5" style="background: linear-gradient(90deg, rgb(169, 209, 142), rgba(169, 209, 142, 0.533)); opacity: 0.5; width: 62.5%;">25h</div>
+      </div>
+      <div class="bd-bar-hours">5sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Sem contrato</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="37.5" style="background: linear-gradient(90deg, rgb(192, 0, 0), rgba(192, 0, 0, 0.533)); opacity: 0.5; width: 37.5%;">15h</div>
+      </div>
+      <div class="bd-bar-hours">3sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Revisão geral</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="37.5" style="background: linear-gradient(90deg, rgb(112, 48, 160), rgba(112, 48, 160, 0.533)); opacity: 0.5; width: 37.5%;">15h</div>
+      </div>
+      <div class="bd-bar-hours">3sem</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label">Buffer</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="12.5" style="opacity: 0.5; width: 12.5%;">5h</div>
+      </div>
+      <div class="bd-bar-hours">1sem</div>
+    </div></div>
     </div>
   </div>
 
   <!-- GANTT CHART -->
   <div class="bd-panel" style="animation-delay:.4s">
-    <div class="bd-panel-title">&#128467; Timeline Gantt — Abril a Dezembro 2026</div>
+    <div class="bd-panel-title">🗓 Timeline Gantt — Abril a Dezembro 2026</div>
     <div class="gantt">
-      <table class="gantt-table" id="bdGanttTable"></table>
+      <table class="gantt-table" id="bdGanttTable"><thead><tr><th style="text-align:left;min-width:150px">Fase</th><th colspan="3" class="gantt-month-marker">Abr</th><th colspan="4" class="gantt-month-marker">Mai</th><th colspan="5" class="gantt-month-marker">Jun</th><th colspan="4" class="gantt-month-marker">Jul</th><th colspan="5" class="gantt-month-marker">Ago</th><th colspan="4" class="gantt-month-marker">Set</th><th colspan="4" class="gantt-month-marker">Out</th><th colspan="5" class="gantt-month-marker">Nov</th><th colspan="2" class="gantt-month-marker">Dez</th></tr></thead><tbody><tr><td class="gantt-row-label">🟠 Diagnóstico</td><td colspan="3"><div class="gantt-bar done" style="background:#00B050;"><span class="tip">Diagnóstico · 15h · 3sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🟠 Senac/MG (ref)</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="3"><div class="gantt-bar pending" style="background:#5B9BD5;"><span class="tip">Senac/MG (ref) · 15h · 3sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🟠 Sesc/DF</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="8"><div class="gantt-bar pending" style="background:#ED7D31;"><span class="tip">Sesc/DF · 40h · 8sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🟠 CLDF</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="6"><div class="gantt-bar pending" style="background:#FFC000;"><span class="tip">CLDF · 30h · 6sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🟠 TST, GDF, HCB</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="9"><div class="gantt-bar pending" style="background:#A9D18E;"><span class="tip">TST, GDF, HCB · 45h · 9sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🟠 Revisão geral</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="4"><div class="gantt-bar pending" style="background:#7030A0;"><span class="tip">Revisão geral · 20h · 4sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🟠 Buffer</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="2"><div class="gantt-bar pending" style="background:#888;"><span class="tip">Buffer · 10h · 2sem</span></div></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label" style="color:var(--blue);font-weight:700;padding:8px 0;">─── Inativos ───</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="gantt-row-label">🔵 Diagnóstico</td><td colspan="3"><div class="gantt-bar done" style="background:#00B050;"><span class="tip">Diagnóstico · 15h · 3sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 Duplicatas</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="3"><div class="gantt-bar pending" style="background:#2F5496;"><span class="tip">Duplicatas · 15h · 3sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 Bem organizados</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="3"><div class="gantt-bar pending" style="background:#5B9BD5;"><span class="tip">Bem organizados · 15h · 3sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 3+ contratos</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="8"><div class="gantt-bar pending" style="background:#ED7D31;"><span class="tip">3+ contratos · 40h · 8sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 Lote 1 (1-2 CTs)</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="6"><div class="gantt-bar pending" style="background:#FFC000;"><span class="tip">Lote 1 (1-2 CTs) · 30h · 6sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 Lote 2 (1-2 CTs)</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="5"><div class="gantt-bar pending" style="background:#A9D18E;"><span class="tip">Lote 2 (1-2 CTs) · 25h · 5sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 Sem contrato</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="3"><div class="gantt-bar pending" style="background:#C00000;"><span class="tip">Sem contrato · 15h · 3sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 Revisão geral</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="3"><div class="gantt-bar pending" style="background:#7030A0;"><span class="tip">Revisão geral · 15h · 3sem</span></div></td><td class="gantt-cell"></td><td class="gantt-cell"></td></tr><tr><td class="gantt-row-label">🔵 Buffer</td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td class="gantt-cell"></td><td colspan="1"><div class="gantt-bar pending" style="background:#888;"><span class="tip">Buffer · 5h · 1sem</span></div></td><td class="gantt-cell"></td></tr></tbody></table>
     </div>
   </div>
 
@@ -681,7 +1392,63 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
       <div class="line"></div>
       <span class="badge badge-orange">7 fases · 175h</span>
     </div>
-    <div class="kanban" id="bdKanbanAtivos"></div>
+    <div class="kanban" id="bdKanbanAtivos"><div class="k-card done">
+      <span class="k-status done">Concluído</span>
+      <div class="k-num" style="background:#00B050">1</div>
+      <div class="k-title">Diagnóstico</div>
+      <div class="k-meta">3 sem · 15h · 12 de abr. → 03 de mai.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Registrar estrutura</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Contar OSs</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Gerar planilha</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:100%;background:#00B050"></div></div>
+      <div class="k-pct">100%</div>
+    </div><div class="k-card active">
+      <span class="k-status active">Próxima</span>
+      <div class="k-num" style="background:#5B9BD5">2</div>
+      <div class="k-title">Senac/MG (ref)</div>
+      <div class="k-meta">3 sem · 15h · 03 de mai. → 24 de mai.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Renomear pastas OS</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Verificar docs OS 001-009</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Completar faltantes</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Validar referência</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#5B9BD5"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#ED7D31">3</div>
+      <div class="k-title">Sesc/DF</div>
+      <div class="k-meta">8 sem · 40h · 24 de mai. → 19 de jul.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CT 67-2022: faturamento</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CT 4269-2023: renomear</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CT 31394-2025: duplicatas</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Nomenclatura OSs</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Docs obrigatórios</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#FFC000">4</div>
+      <div class="k-title">CLDF</div>
+      <div class="k-meta">6 sem · 30h · 19 de jul. → 30 de ago.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• PE 16-2020: pastas 003/004</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• 16 OSs: completar docs</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• PE 45-2021: Rel. Entrega</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Nomenclatura</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#A9D18E">5</div>
+      <div class="k-title">TST, GDF, HCB</div>
+      <div class="k-meta">9 sem · 45h · 30 de ago. → 01 de nov.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TST PE 80-2019</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TST PE 018-2025</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• SEEC-GDF: renomear</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• HCB: corrigir numeração</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Docs obrigatórios</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#7030A0">6</div>
+      <div class="k-title">Revisão geral</div>
+      <div class="k-meta">4 sem · 20h · 01 de nov. → 29 de nov.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Revisão cruzada</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Atualizar planilha</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Documentar padrão</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#7030A0"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#888">7</div>
+      <div class="k-title">Buffer</div>
+      <div class="k-meta">2 sem · 10h · 29 de nov. → 14 de dez.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Pendências</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Atrasos</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Validação final</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#888"></div></div>
+      <div class="k-pct">0%</div>
+    </div></div>
   </div>
 
   <!-- KANBAN: INATIVOS -->
@@ -691,7 +1458,79 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
       <div class="line"></div>
       <span class="badge badge-blue">9 fases · 175h</span>
     </div>
-    <div class="kanban" id="bdKanbanInativos"></div>
+    <div class="kanban" id="bdKanbanInativos"><div class="k-card done">
+      <span class="k-status done">Concluído</span>
+      <div class="k-num" style="background:#00B050">1</div>
+      <div class="k-title">Diagnóstico</div>
+      <div class="k-meta">3 sem · 15h · 12 de abr. → 03 de mai.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Navegar pastas</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Registrar estrutura</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Duplicatas/mistos</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Planilha unificada</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:100%;background:#00B050"></div></div>
+      <div class="k-pct">100%</div>
+    </div><div class="k-card active">
+      <span class="k-status active">Próxima</span>
+      <div class="k-num" style="background:#2F5496">2</div>
+      <div class="k-title">Duplicatas</div>
+      <div class="k-meta">3 sem · 15h · 03 de mai. → 24 de mai.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TJPE vs TJPE(1)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• MCTI+MCTI(1)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• EB vs EXÉRCITO</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• 06-TCDF vs TCDF</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• RNP→TJPE</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• IOS Contratos</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• LogLab→ALMT</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#5B9BD5">3</div>
+      <div class="k-title">Bem organizados</div>
+      <div class="k-meta">3 sem · 15h · 24 de mai. → 14 de jun.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TCE-GO</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ANTT</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• EZVIDA-SESI</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• 06-TCDF</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#5B9BD5"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#ED7D31">4</div>
+      <div class="k-title">3+ contratos</div>
+      <div class="k-meta">8 sem · 40h · 14 de jun. → 09 de ago.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• EMBRAPA(12)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• SICOOB(5)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TJPR(5)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• INEP(5)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• EB(4)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Certisign(3)</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• EXÉRCITO(3)</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#FFC000">5</div>
+      <div class="k-title">Lote 1 (1-2 CTs)</div>
+      <div class="k-meta">6 sem · 30h · 09 de ago. → 20 de set.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ANEEL</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ANVISA</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CASSI</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• STF</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TJPE</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• MCTI</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• IGES</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• BNB</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CDF</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CLDF</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CNF</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• CPB</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#A9D18E">6</div>
+      <div class="k-title">Lote 2 (1-2 CTs)</div>
+      <div class="k-meta">5 sem · 25h · 20 de set. → 25 de out.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• EBSERH</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ENAP</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• IBA</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• IFSC</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• IN</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• IICA</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• MI</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• MinC</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• MME</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• MPOG</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Poupex</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• RNP</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TCDF</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TCU</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• TJRJ</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Aeronáutica</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#C00000">7</div>
+      <div class="k-title">Sem contrato</div>
+      <div class="k-meta">3 sem · 15h · 25 de out. → 15 de nov.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ALMT</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ICDF</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ABQM</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Adam Smith</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• ARVVO</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Capgemini</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#C00000"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#7030A0">8</div>
+      <div class="k-title">Revisão geral</div>
+      <div class="k-meta">3 sem · 15h · 15 de nov. → 06 de dez.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Revisão cruzada 50</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Planilha</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Padrão/exceções</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Relatório final</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#7030A0"></div></div>
+      <div class="k-pct">0%</div>
+    </div><div class="k-card pending">
+      <span class="k-status pending">Pendente</span>
+      <div class="k-num" style="background:#888">9</div>
+      <div class="k-title">Buffer</div>
+      <div class="k-meta">1 sem · 5h · 06 de dez. → 14 de dez.</div>
+      <div style="max-height:0;overflow:hidden;transition:max-height .4s ease;" class="k-tasks"><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Pendências</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Atrasos</div><div style="font-size:.62rem;color:var(--gray);padding:1px 0;">• Validação</div></div>
+      <div class="k-progress"><div class="k-progress-fill" style="width:0%;background:#888"></div></div>
+      <div class="k-pct">0%</div>
+    </div></div>
   </div>
 
   <!-- VISÃO POR CLIENTE -->
@@ -703,7 +1542,7 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
     </div>
 
     <div class="bd-panel" style="animation-delay:.7s">
-      <div class="bd-panel-title">&#127959; Mapa de Clientes — Esforço e Progresso</div>
+      <div class="bd-panel-title">🏗 Mapa de Clientes — Esforço e Progresso</div>
 
       <div class="client-filters">
         <button class="cf-btn active" onclick="bdFilterClients('todos')">Todos (56)</button>
@@ -722,18 +1561,594 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
         <span class="ok">Referência / concluído</span>
       </div>
 
-      <div class="client-grid" id="bdClientGrid"></div>
+      <div class="client-grid" id="bdClientGrid"><div class="cl-card size-xl" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">EMBRAPA</div>
+      <div class="cl-contracts">12 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">crítico</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="cl-pct">0% · Fase F4</div>
+      <div class="cl-phase" style="background:#ED7D3122;color:#ED7D31;">Fase F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 12 contratos/ARPs — maior cliente</div><div style="padding:2px 0;">• Criar 01-Contratos com subpastas</div><div style="padding:2px 0;">• Estrutura 02-04 completa</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-xl" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">INEP</div>
+      <div class="cl-contracts">5 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">crítico</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="cl-pct">0% · Fase F4</div>
+      <div class="cl-phase" style="background:#ED7D3122;color:#ED7D31;">Fase F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 5 CTs/ARPs + Faturamento</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-xl" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">SICOOB</div>
+      <div class="cl-contracts">5 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">crítico</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="cl-pct">0% · Fase F4</div>
+      <div class="cl-phase" style="background:#ED7D3122;color:#ED7D31;">Fase F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 5 contratos para reorganizar</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-xl" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">TJPR</div>
+      <div class="cl-contracts">5 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">crítico</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="cl-pct">0% · Fase F4</div>
+      <div class="cl-phase" style="background:#ED7D3122;color:#ED7D31;">Fase F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 5 contratos para organizar cronologicamente</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-lg" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">EB</div>
+      <div class="cl-contracts">4 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">duplicata</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="cl-pct">0% · Fase F2/F4</div>
+      <div class="cl-phase" style="background:#2F549622;color:#2F5496;">Fase F2/F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Possível duplicata com EXÉRCITO</div><div style="padding:2px 0;">• 4 contratos para consolidar</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-lg" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">Certisign</div>
+      <div class="cl-contracts">3 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">crítico</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="cl-pct">0% · Fase F4</div>
+      <div class="cl-phase" style="background:#ED7D3122;color:#ED7D31;">Fase F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 3 contratos — criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-lg" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">EXÉRCITO</div>
+      <div class="cl-contracts">3 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">crítico</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="cl-pct">0% · Fase F4</div>
+      <div class="cl-phase" style="background:#ED7D3122;color:#ED7D31;">Fase F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 3 contratos</div><div style="padding:2px 0;">• Verificar relação com EB</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-lg" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type ativo">ativo</span>
+      <div class="cl-name">Sesc/DF</div>
+      <div class="cl-contracts">3 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#ED7D31"></div></div>
+      <div class="cl-pct">0% · Fase F3</div>
+      <div class="cl-phase" style="background:#ED7D3122;color:#ED7D31;">Fase F3</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• CT 67-2022: faturamento por OS, não por TA</div><div style="padding:2px 0;">• CT 4269-2023: pasta 004 renomear</div><div style="padding:2px 0;">• CT 31394-2025: duplicatas massivas</div><div style="padding:2px 0;">• Nomenclatura de OSs irregular</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ANEEL</div>
+      <div class="cl-contracts">2 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão 4 pastas</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ANTT</div>
+      <div class="cl-contracts">2 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">bem organizado</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#5B9BD5"></div></div>
+      <div class="cl-pct">0% · Fase F3</div>
+      <div class="cl-phase" style="background:#5B9BD522;color:#5B9BD5;">Fase F3</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 12 pastas para renomear padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ANVISA</div>
+      <div class="cl-contracts">2 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">CASSI</div>
+      <div class="cl-contracts">2 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type ativo">ativo</span>
+      <div class="cl-name">CLDF</div>
+      <div class="cl-contracts">2 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F4</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F4</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• PE 16-2020: faltam pastas 003/004</div><div style="padding:2px 0;">• PE 45-2021: sem Rel. Entrega nas OSs</div><div style="padding:2px 0;">• Nomenclatura inconsistente</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">IGES</div>
+      <div class="cl-contracts">2 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">MCTI</div>
+      <div class="cl-contracts">2 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">duplicata</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="cl-pct">0% · Fase F2/F5</div>
+      <div class="cl-phase" style="background:#2F549622;color:#2F5496;">Fase F2/F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Pasta duplicada MCTI(1)</div><div style="padding:2px 0;">• NFe fora do lugar</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">STF</div>
+      <div class="cl-contracts">2 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">TJPE</div>
+      <div class="cl-contracts">2 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">duplicata</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="cl-pct">0% · Fase F2/F5</div>
+      <div class="cl-phase" style="background:#2F549622;color:#2F5496;">Fase F2/F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Pasta duplicada TJPE(1)</div><div style="padding:2px 0;">• Conteúdo dentro de RNP</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-md" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type ativo">ativo</span>
+      <div class="cl-name">TST</div>
+      <div class="cl-contracts">2 contratos </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• PE 80-2019: falta pasta 004, numeração incorreta</div><div style="padding:2px 0;">• PE 018-2025: faltam 4 pastas padrão, PDF solto</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">06-TCDF</div>
+      <div class="cl-contracts">1 contrato <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">bem organizado</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#5B9BD5"></div></div>
+      <div class="cl-pct">0% · Fase F3</div>
+      <div class="cl-phase" style="background:#5B9BD522;color:#5B9BD5;">Fase F3</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 5 pastas para reorganizar na estrutura 4</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">Aeronáutica</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Organizar PDFs soltos</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ALMT</div>
+      <div class="cl-contracts">1 contrato <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">especial</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#C00000"></div></div>
+      <div class="cl-pct">0% · Fase F7</div>
+      <div class="cl-phase" style="background:#C0000022;color:#C00000;">Fase F7</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Verificar PE 08-2018 como referência</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">BNB</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">Câmara Dep.</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Organizar PDFs soltos</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">CDF</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">CLDF (inativo)</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">CNF</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">CPB</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#FFC000"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#FFC00022;color:#FFC000;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">EBSERH</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ENAP</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">EZVIDA-SESI</div>
+      <div class="cl-contracts">1 contrato <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">bem organizado</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#5B9BD5"></div></div>
+      <div class="cl-pct">0% · Fase F3</div>
+      <div class="cl-phase" style="background:#5B9BD522;color:#5B9BD5;">Fase F3</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 6 pastas para ajustar nomenclatura</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type ativo">ativo</span>
+      <div class="cl-name">HCB</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Falta pasta 004</div><div style="padding:2px 0;">• Numeração usa ponto ao invés de 3 dígitos</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">IBA</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">IFSC</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">IICA</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">IN</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">MI</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">MinC</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">MME</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">MPOG</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">Poupex</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">RNP</div>
+      <div class="cl-contracts">1 contrato <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">duplicata</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="cl-pct">0% · Fase F2/F5</div>
+      <div class="cl-phase" style="background:#2F549622;color:#2F5496;">Fase F2/F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Contém pasta TJPE indevidamente</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type ativo">ativo</span>
+      <div class="cl-name">SEEC-GDF</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F5</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Pastas 03/04 fora do padrão de nomes</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type ativo">ativo</span>
+      <div class="cl-name">Senac/MG</div>
+      <div class="cl-contracts">1 contrato <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">referência</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#5B9BD5"></div></div>
+      <div class="cl-pct">0% · Fase F2</div>
+      <div class="cl-phase" style="background:#5B9BD522;color:#5B9BD5;">Fase F2</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Renomear pastas OS sem numeração padrão</div><div style="padding:2px 0;">• Verificar docs por OS (001-009)</div><div style="padding:2px 0;">• Completar docs faltantes</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">TCDF</div>
+      <div class="cl-contracts">1 contrato <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">duplicata</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="cl-pct">0% · Fase F2/F5</div>
+      <div class="cl-phase" style="background:#2F549622;color:#2F5496;">Fase F2/F5</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Pasta duplicada com 06-TCDF</div><div style="padding:2px 0;">• Consolidar em pasta única</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">TCE-GO</div>
+      <div class="cl-contracts">1 contrato <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">bem organizado</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#5B9BD5"></div></div>
+      <div class="cl-pct">0% · Fase F3</div>
+      <div class="cl-phase" style="background:#5B9BD522;color:#5B9BD5;">Fase F3</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 8 pastas para renomear padrão 01-04</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">TCU</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-sm" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">TJRJ</div>
+      <div class="cl-contracts">1 contrato </div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#A9D18E"></div></div>
+      <div class="cl-pct">0% · Fase F6</div>
+      <div class="cl-phase" style="background:#A9D18E22;color:#A9D18E;">Fase F6</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Criar estrutura padrão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-ok" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ABQM</div>
+      <div class="cl-contracts">0 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">especial</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#C00000"></div></div>
+      <div class="cl-pct">0% · Fase F7</div>
+      <div class="cl-phase" style="background:#C0000022;color:#C00000;">Fase F7</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Documentar decisão: manter ou arquivar</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-ok" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">Adam Smith</div>
+      <div class="cl-contracts">0 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">especial</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#C00000"></div></div>
+      <div class="cl-pct">0% · Fase F7</div>
+      <div class="cl-phase" style="background:#C0000022;color:#C00000;">Fase F7</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Documentar decisão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-ok" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ARVVO</div>
+      <div class="cl-contracts">0 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">especial</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#C00000"></div></div>
+      <div class="cl-pct">0% · Fase F7</div>
+      <div class="cl-phase" style="background:#C0000022;color:#C00000;">Fase F7</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Documentar decisão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-ok" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">Capgemini</div>
+      <div class="cl-contracts">0 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">especial</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#C00000"></div></div>
+      <div class="cl-pct">0% · Fase F7</div>
+      <div class="cl-phase" style="background:#C0000022;color:#C00000;">Fase F7</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Documentar decisão</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-ok" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">ICDF</div>
+      <div class="cl-contracts">0 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">especial</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#C00000"></div></div>
+      <div class="cl-pct">0% · Fase F7</div>
+      <div class="cl-phase" style="background:#C0000022;color:#C00000;">Fase F7</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Organizar proposta e NF em pasta mínima</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-ok" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">IOS Contratos</div>
+      <div class="cl-contracts">0 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">duplicata</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="cl-pct">0% · Fase F2</div>
+      <div class="cl-phase" style="background:#2F549622;color:#2F5496;">Fase F2</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• 7 PDFs de 6 clientes diferentes</div><div style="padding:2px 0;">• Redistribuir para pastas corretas</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div><div class="cl-card size-ok" style="animation: 0.4s ease 0s 1 normal forwards running bdFadeUp; opacity: 0;">
+      <span class="cl-type inativo">inativo</span>
+      <div class="cl-name">LogLab</div>
+      <div class="cl-contracts">0 contratos <span style="font-size:.5rem;background:#E8EDF4;padding:1px 6px;border-radius:8px;margin-right:3px;">duplicata</span></div>
+      <div class="cl-bar"><div class="cl-bar-fill" style="width:0%;background:#2F5496"></div></div>
+      <div class="cl-pct">0% · Fase F2</div>
+      <div class="cl-phase" style="background:#2F549622;color:#2F5496;">Fase F2</div>
+      <div class="cl-issues"><div style="padding:2px 0;">• Contém ofícios da ALMT</div></div>
+      <button class="cl-expand" onclick="event.stopPropagation();this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'▲ Menos':'▼ Ver pendências'">▼ Ver pendências</button>
+    </div></div>
     </div>
 
     <!-- Treemap + Ranking -->
     <div class="bd-grid-mid" style="margin-top:16px;">
       <div class="bd-panel" style="animation-delay:.8s">
-        <div class="bd-panel-title">&#128202; Treemap — Esforço por Cliente (proporcional a contratos)</div>
-        <div class="treemap-wrap"><canvas id="bdTreemapCanvas"></canvas></div>
+        <div class="bd-panel-title">📊 Treemap — Esforço por Cliente (proporcional a contratos)</div>
+        <div class="treemap-wrap"><canvas id="bdTreemapCanvas" width="1016" height="520"></canvas></div>
       </div>
       <div class="bd-panel" style="animation-delay:.9s">
-        <div class="bd-panel-title">&#128202; Ranking — Complexidade (contratos + irregularidades)</div>
-        <div class="bd-bars" id="bdRankingBars" style="max-height:260px;overflow-y:auto;"></div>
+        <div class="bd-panel-title">📊 Ranking — Complexidade (contratos + irregularidades)</div>
+        <div class="bd-bars" id="bdRankingBars" style="max-height:260px;overflow-y:auto;"><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">EMBRAPA</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="100" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 100%;">27pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">12CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">SICOOB</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="40.74074074074074" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 40.7407%;">11pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">5CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">TJPR</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="40.74074074074074" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 40.7407%;">11pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">5CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">INEP</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="40.74074074074074" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 40.7407%;">11pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">5CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">Sesc/DF</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="37.03703703703704" style="background: linear-gradient(90deg, rgb(237, 125, 49), rgba(237, 125, 49, 0.533)); width: 37.037%;">10pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">3CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">EB</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="37.03703703703704" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 37.037%;">10pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">4CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">EXÉRCITO</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="29.629629629629626" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 29.6296%;">8pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">3CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">CLDF</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="25.925925925925924" style="background: linear-gradient(90deg, rgb(237, 125, 49), rgba(237, 125, 49, 0.533)); width: 25.9259%;">7pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">2CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">Certisign</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="25.925925925925924" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 25.9259%;">7pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">3CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">TST</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="22.22222222222222" style="background: linear-gradient(90deg, rgb(237, 125, 49), rgba(237, 125, 49, 0.533)); width: 22.2222%;">6pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">2CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">TJPE</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="22.22222222222222" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 22.2222%;">6pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">2CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">MCTI</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="22.22222222222222" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 22.2222%;">6pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">2CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">Senac/MG</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="18.51851851851852" style="background: linear-gradient(90deg, rgb(237, 125, 49), rgba(237, 125, 49, 0.533)); width: 18.5185%;">5pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">1CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">ANTT</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="18.51851851851852" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 18.5185%;">5pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">2CTs</div>
+    </div><div class="bd-bar-row">
+      <div class="bd-bar-label" style="width:90px">ANEEL</div>
+      <div class="bd-bar-track">
+        <div class="bd-bar-fill" data-bd-width="18.51851851851852" style="background: linear-gradient(90deg, rgb(59, 130, 246), rgba(59, 130, 246, 0.533)); width: 18.5185%;">5pts</div>
+      </div>
+      <div class="bd-bar-hours" style="width:60px">2CTs</div>
+    </div></div>
       </div>
     </div>
   </div>
@@ -741,12 +2156,12 @@ header p{font-size:.82rem;opacity:.8;margin-top:4px;}
   <!-- PROJEÇÃO CUMULATIVA + BURNDOWN -->
   <div class="bd-grid-mid" style="margin-top:24px;">
     <div class="bd-panel" style="animation-delay:.5s">
-      <div class="bd-panel-title">&#128200; Projeção Cumulativa de Horas</div>
-      <div class="wave-chart"><canvas id="bdCumulativeChart"></canvas></div>
+      <div class="bd-panel-title">📈 Projeção Cumulativa de Horas</div>
+      <div class="wave-chart"><canvas id="bdCumulativeChart" width="1016" height="360"></canvas></div>
     </div>
     <div class="bd-panel" style="animation-delay:.6s">
-      <div class="bd-panel-title">&#128200; Burn-down — Horas Restantes</div>
-      <div class="wave-chart"><canvas id="bdBurndownChart"></canvas></div>
+      <div class="bd-panel-title">📈 Burn-down — Horas Restantes</div>
+      <div class="wave-chart"><canvas id="bdBurndownChart" width="1016" height="360"></canvas></div>
     </div>
   </div>
 
@@ -1696,12 +3111,12 @@ window.addEventListener('resize', () => {
 #gh-toast{position:fixed;bottom:80px;right:24px;background:#333;color:#fff;padding:12px 20px;border-radius:8px;font-size:.82rem;z-index:10001;display:none;box-shadow:0 4px 12px rgba(0,0,0,.3);max-width:350px;}
 </style>
 
-<button id="gh-save-btn" onclick="ghStartSave()" title="Salvar alterações no GitHub">
-  <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+<button id="gh-save-btn" onclick="ghStartSave()" title="Salvar alterações no GitHub" class="">
+  <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
   Salvar no GitHub
 </button>
 
-<div id="gh-modal-overlay" onclick="if(event.target===this)ghCloseModal()">
+<div id="gh-modal-overlay" onclick="if(event.target===this)ghCloseModal()" class="">
   <div id="gh-modal">
     <h3>Configurar acesso ao GitHub</h3>
     <p>Para salvar alterações diretamente no repositório, você precisa de um <strong>Personal Access Token (PAT)</strong> do GitHub.</p>
@@ -1712,7 +3127,7 @@ window.addEventListener('resize', () => {
     4. Em "Repository access" selecione <strong>"Only select repositories"</strong> → <em>qualidade</em><br>
     5. Em "Permissions" → "Contents" → <strong>Read and write</strong><br>
     6. Clique em <strong>"Generate token"</strong> e copie o token</p>
-    <input type="password" id="gh-token-input" placeholder="Cole seu token aqui (ghp_...)" />
+    <input type="password" id="gh-token-input" placeholder="Cole seu token aqui (ghp_...)">
     <div class="hint">O token fica salvo apenas no seu navegador (localStorage). Ninguém mais tem acesso.</div>
     <div class="btn-row">
       <button class="btn-cancel" onclick="ghCloseModal()">Cancelar</button>
@@ -1721,7 +3136,7 @@ window.addEventListener('resize', () => {
   </div>
 </div>
 
-<div id="gh-toast"></div>
+<div id="gh-toast" style="background: rgb(0, 176, 80); display: none;">Token salvo! Agora clique em "Salvar no GitHub" novamente.</div>
 
 <script>
 // ===== GitHub Integration =====
@@ -1848,5 +3263,6 @@ if (!document.getElementById('gh-spin-style')) {
 }
 </script>
 
-</body>
-</html>
+
+
+</body></html>
