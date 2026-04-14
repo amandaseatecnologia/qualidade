@@ -1668,5 +1668,185 @@ window.addEventListener('resize', () => {
 });
 </script>
 
+<!-- ===== BOTÃO SALVAR NO GITHUB ===== -->
+<style>
+#gh-save-btn{position:fixed;bottom:24px;right:24px;background:linear-gradient(135deg,#2F5496,#1F4E79);color:#fff;border:none;border-radius:12px;padding:14px 22px;font-size:.9rem;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);z-index:9999;display:flex;align-items:center;gap:8px;transition:all .2s;}
+#gh-save-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.35);}
+#gh-save-btn:active{transform:translateY(0);}
+#gh-save-btn.saving{background:#888;pointer-events:none;}
+#gh-save-btn.success{background:#00B050;}
+#gh-save-btn.error{background:#C00000;}
+#gh-save-btn svg{width:20px;height:20px;fill:currentColor;}
+
+#gh-modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:10000;justify-content:center;align-items:center;}
+#gh-modal-overlay.visible{display:flex;}
+#gh-modal{background:#fff;border-radius:12px;padding:28px;max-width:480px;width:90%;box-shadow:0 8px 32px rgba(0,0,0,.3);}
+#gh-modal h3{color:#2F5496;margin-bottom:12px;font-size:1.1rem;}
+#gh-modal p{font-size:.85rem;color:#555;margin-bottom:16px;line-height:1.5;}
+#gh-modal input{width:100%;padding:10px 14px;border:2px solid #D6E4F0;border-radius:8px;font-size:.9rem;margin-bottom:12px;outline:none;}
+#gh-modal input:focus{border-color:#2F5496;}
+#gh-modal .btn-row{display:flex;gap:10px;justify-content:flex-end;}
+#gh-modal button{padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;}
+#gh-modal .btn-cancel{background:#eee;color:#666;}
+#gh-modal .btn-save{background:#2F5496;color:#fff;}
+#gh-modal .btn-save:hover{background:#1F4E79;}
+#gh-modal .hint{font-size:.75rem;color:#888;margin-bottom:14px;}
+#gh-modal a{color:#2F5496;}
+
+#gh-toast{position:fixed;bottom:80px;right:24px;background:#333;color:#fff;padding:12px 20px;border-radius:8px;font-size:.82rem;z-index:10001;display:none;box-shadow:0 4px 12px rgba(0,0,0,.3);max-width:350px;}
+</style>
+
+<button id="gh-save-btn" onclick="ghStartSave()" title="Salvar alterações no GitHub">
+  <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+  Salvar no GitHub
+</button>
+
+<div id="gh-modal-overlay" onclick="if(event.target===this)ghCloseModal()">
+  <div id="gh-modal">
+    <h3>Configurar acesso ao GitHub</h3>
+    <p>Para salvar alterações diretamente no repositório, você precisa de um <strong>Personal Access Token (PAT)</strong> do GitHub.</p>
+    <p><strong>Como criar:</strong><br>
+    1. Acesse <a href="https://github.com/settings/tokens?type=beta" target="_blank">GitHub → Settings → Tokens</a><br>
+    2. Clique em <strong>"Generate new token"</strong> (Fine-grained)<br>
+    3. Nome: <em>Painel Drives</em><br>
+    4. Em "Repository access" selecione <strong>"Only select repositories"</strong> → <em>qualidade</em><br>
+    5. Em "Permissions" → "Contents" → <strong>Read and write</strong><br>
+    6. Clique em <strong>"Generate token"</strong> e copie o token</p>
+    <input type="password" id="gh-token-input" placeholder="Cole seu token aqui (ghp_...)" />
+    <div class="hint">O token fica salvo apenas no seu navegador (localStorage). Ninguém mais tem acesso.</div>
+    <div class="btn-row">
+      <button class="btn-cancel" onclick="ghCloseModal()">Cancelar</button>
+      <button class="btn-save" onclick="ghSaveToken()">Salvar Token</button>
+    </div>
+  </div>
+</div>
+
+<div id="gh-toast"></div>
+
+<script>
+// ===== GitHub Integration =====
+const GH_OWNER = 'amandaseatecnologia';
+const GH_REPO = 'qualidade';
+const GH_FILE = 'index.html';
+const GH_BRANCH = 'main';
+
+function ghGetToken() {
+  return localStorage.getItem('gh_pat') || '';
+}
+
+function ghShowModal() {
+  document.getElementById('gh-modal-overlay').classList.add('visible');
+  document.getElementById('gh-token-input').value = ghGetToken();
+}
+
+function ghCloseModal() {
+  document.getElementById('gh-modal-overlay').classList.remove('visible');
+}
+
+function ghSaveToken() {
+  const token = document.getElementById('gh-token-input').value.trim();
+  if (!token) { alert('Cole o token antes de salvar.'); return; }
+  localStorage.setItem('gh_pat', token);
+  ghCloseModal();
+  ghToast('Token salvo! Agora clique em "Salvar no GitHub" novamente.', '#00B050');
+}
+
+function ghToast(msg, bg) {
+  const t = document.getElementById('gh-toast');
+  t.textContent = msg;
+  t.style.background = bg || '#333';
+  t.style.display = 'block';
+  setTimeout(() => { t.style.display = 'none'; }, 4000);
+}
+
+async function ghStartSave() {
+  const token = ghGetToken();
+  if (!token) { ghShowModal(); return; }
+
+  const btn = document.getElementById('gh-save-btn');
+  const originalText = btn.innerHTML;
+  btn.classList.add('saving');
+  btn.innerHTML = '<svg viewBox="0 0 16 16" style="animation:spin 1s linear infinite"><path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8S12.42 0 8 0zm0 14.5c-3.59 0-6.5-2.91-6.5-6.5S4.41 1.5 8 1.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5z" opacity=".3"/><path d="M8 1.5V0C3.58 0 0 3.58 0 8h1.5C1.5 4.41 4.41 1.5 8 1.5z"/></svg> Salvando...';
+
+  try {
+    // 1. Obter SHA atual do arquivo
+    const getRes = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}?ref=${GH_BRANCH}`, {
+      headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+
+    if (getRes.status === 401 || getRes.status === 403) {
+      localStorage.removeItem('gh_pat');
+      throw new Error('Token inválido ou sem permissão. Configure novamente.');
+    }
+
+    if (!getRes.ok) throw new Error('Erro ao acessar o repositório: ' + getRes.status);
+
+    const fileData = await getRes.json();
+    const sha = fileData.sha;
+
+    // 2. Capturar HTML atual da página (sem o botão de save em estado "saving")
+    btn.classList.remove('saving');
+    btn.innerHTML = originalText;
+    const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    btn.classList.add('saving');
+    btn.innerHTML = '<svg viewBox="0 0 16 16" style="animation:spin 1s linear infinite"><path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8S12.42 0 8 0zm0 14.5c-3.59 0-6.5-2.91-6.5-6.5S4.41 1.5 8 1.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5z" opacity=".3"/><path d="M8 1.5V0C3.58 0 0 3.58 0 8h1.5C1.5 4.41 4.41 1.5 8 1.5z"/></svg> Salvando...';
+
+    // 3. Commit via API
+    const now = new Date();
+    const timestamp = now.toLocaleString('pt-BR', {day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    const commitMsg = `Atualização do painel — ${timestamp}`;
+
+    const putRes = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: commitMsg,
+        content: btoa(unescape(encodeURIComponent(htmlContent))),
+        sha: sha,
+        branch: GH_BRANCH
+      })
+    });
+
+    if (!putRes.ok) {
+      const err = await putRes.json();
+      throw new Error(err.message || 'Erro no commit');
+    }
+
+    btn.classList.remove('saving');
+    btn.classList.add('success');
+    btn.innerHTML = '<svg viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg> Salvo!';
+    ghToast('Commit realizado com sucesso! O site será atualizado em ~1 minuto.', '#00B050');
+
+    setTimeout(() => {
+      btn.classList.remove('success');
+      btn.innerHTML = originalText;
+    }, 3000);
+
+  } catch (err) {
+    btn.classList.remove('saving');
+    btn.classList.add('error');
+    btn.innerHTML = '<svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.5 10.44L10.44 11.5 8 9.06 5.56 11.5 4.5 10.44 6.94 8 4.5 5.56 5.56 4.5 8 6.94l2.44-2.44 1.06 1.06L9.06 8l2.44 2.44z"/></svg> Erro';
+    ghToast(err.message, '#C00000');
+
+    setTimeout(() => {
+      btn.classList.remove('error');
+      btn.innerHTML = originalText;
+    }, 3000);
+  }
+}
+
+// Spin animation
+if (!document.getElementById('gh-spin-style')) {
+  const s = document.createElement('style');
+  s.id = 'gh-spin-style';
+  s.textContent = '@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}';
+  document.head.appendChild(s);
+}
+</script>
+
 </body>
 </html>
